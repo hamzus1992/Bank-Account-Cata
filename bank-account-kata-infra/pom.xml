@@ -47,6 +47,12 @@
             <version>2.9.2</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- DOZER -->
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
+            <version>6.5.0</version>
+        </dependency>
         <!-- SpringBoot Test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

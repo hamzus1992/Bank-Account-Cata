@@ -1,12 +1,23 @@
 package com.bank.account.kata.business.bank.operation.spi;
 
-import com.bank.account.kata.business.bank.operation.model.AccountDto;
+import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
+import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
 import reactor.core.publisher.Mono;
 
 public interface BankAccountRepository {
 
-    Mono<AccountDto> findById(Long id);
+    /**
+     * find account by id
+     * @param id the account identifier
+     * @return bank account
+     */
+    Mono<BankAccountDto> findById(Long id);
 
-    Mono<AccountDto> saveAccount(AccountDto accountDto);
+    /**
+     * save account
+     * @param accountDto the account
+     * @return bank account
+     */
+    Mono<BankAccountDto> saveAccount(BankAccountDto accountDto);
 
 }

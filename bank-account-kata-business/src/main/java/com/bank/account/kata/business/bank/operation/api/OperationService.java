@@ -1,7 +1,7 @@
 package com.bank.account.kata.business.bank.operation.api;
 
 import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
-import com.bank.account.kata.business.bank.operation.model.AccountDto;
+import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
 import reactor.core.publisher.Mono;
 
 public interface OperationService {
@@ -12,7 +12,7 @@ public interface OperationService {
      * @param amount the amount of the transaction
      * @throws AccountNotFoundException
      */
-    Mono<AccountDto> doWithdrawal(long accountId, long amount) throws AccountNotFoundException;
+    Mono<BankAccountDto> doWithdrawal(long accountId, long amount) throws AccountNotFoundException;
 
 
     /**
@@ -21,6 +21,6 @@ public interface OperationService {
      * @param amount the amount of the transaction
      * @throws AccountNotFoundException
      */
-    Mono<AccountDto> doDeposit(long accountId, long amount) throws AccountNotFoundException;
+    Mono<BankAccountDto> doDeposit(long accountId, long amount) throws AccountNotFoundException;
 
 }

@@ -21,6 +21,6 @@ public class OperationDto {
 
     private Long amount;
 
-    private AccountDto account;
+    private BankAccountDto account;
 
 }

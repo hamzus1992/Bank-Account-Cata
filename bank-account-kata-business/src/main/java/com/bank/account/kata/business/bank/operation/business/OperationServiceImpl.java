@@ -2,7 +2,7 @@ package com.bank.account.kata.business.bank.operation.business;
 
 import com.bank.account.kata.business.bank.operation.api.OperationService;
 import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
-import com.bank.account.kata.business.bank.operation.model.AccountDto;
+import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import com.bank.account.kata.business.bank.operation.model.OperationTypeDto;
 import com.bank.account.kata.business.bank.operation.spi.BankAccountRepository;
@@ -24,7 +24,7 @@ public class OperationServiceImpl implements OperationService {
     private final BankAccountRepository bankAccountRepository;
 
     @Override
-    public Mono<AccountDto> doWithdrawal(long accountId, long amount) {
+    public Mono<BankAccountDto> doWithdrawal(long accountId, long amount) {
         return bankAccountRepository.findById(accountId)
                 .switchIfEmpty(Mono.defer(() -> Mono.error(new AccountNotFoundException(String.valueOf(accountId)))))
                 .flatMap(account -> createOperation(account, amount, OperationTypeDto.WITHDRAWAL))
@@ -33,7 +33,7 @@ public class OperationServiceImpl implements OperationService {
     }
 
     @Override
-    public Mono<AccountDto> doDeposit(long accountId, long amount) {
+    public Mono<BankAccountDto> doDeposit(long accountId, long amount) {
         return bankAccountRepository.findById(accountId)
                 .switchIfEmpty(Mono.defer(() -> Mono.error(new AccountNotFoundException(String.valueOf(accountId)))))
                 .flatMap(account -> createOperation(account, amount, OperationTypeDto.DEPOSIT))
@@ -41,7 +41,7 @@ public class OperationServiceImpl implements OperationService {
                 .flatMap(bankAccountRepository::saveAccount);
     }
 
-    private Mono<OperationDto> createOperation(AccountDto accountDto, long amount, OperationTypeDto operationTypeDto) {
+    private Mono<OperationDto> createOperation(BankAccountDto accountDto, long amount, OperationTypeDto operationTypeDto) {
         return operationRepository.saveOperation(OperationDto.builder()
                 .date(Instant.now())
                 .account(accountDto)
@@ -51,7 +51,7 @@ public class OperationServiceImpl implements OperationService {
     }
 
 
-    private AccountDto createAccount(OperationDto operationDto, long amount, OperationTypeDto operationTypeDto) {
+    private BankAccountDto createAccount(OperationDto operationDto, long amount, OperationTypeDto operationTypeDto) {
         operationDto.getAccount().getLatestOperations().add(operationDto);
         operationDto.getAccount().setBalance(operationDto.getAccount().getBalance() + ((operationTypeDto.equals(OperationTypeDto.DEPOSIT) ? 1 : -1) * amount));
         return operationDto.getAccount();

@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountDto {
+public class BankAccountDto {
 
     private Long id;
 
