@@ -2,11 +2,17 @@ package com.bank.account.kata.infra.service;
 
 
 import com.bank.account.kata.business.bank.account.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import com.bank.account.kata.business.bank.operation.model.OperationTypeDto;
-import com.bank.account.kata.infra.BankAccountKataInfraApplicationTests;
-import org.junit.jupiter.api.Test;
+import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
+import com.bank.account.kata.infra.BankAccountKataInfraApplication;
+import com.bank.account.kata.infra.repo.BankAccountRepo;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import reactor.test.StepVerifier;
 
 import java.time.Instant;
@@ -14,15 +20,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-class OperationRepositoryTest  extends BankAccountKataInfraApplicationTests {
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = BankAccountKataInfraApplication.class)
+public class OperationRepositoryTest {
+
+    protected static final Long ID = 1L;
+    protected static final String firstName = "HAMZA";
+    protected static final String lastName = "RAKROUKI";
+    protected static final Long balance = 100L;
 
     @Autowired
     private OperationRepositoryAdapter operationRepositoryAdapter;
 
+    @Autowired
+    protected BankAccountRepo bankAccountRepo;
 
+    @Autowired
+    protected BankAccountRepository bankAccountRepository;
+
+    @Autowired
+    protected OperationRepository operationRepository;
 
     @Test
-    void should_save_the_operation() {
+    public void should_save_the_operation() {
         operationRepository.saveOperation(OperationDto.builder()
                 .id(1L)
                 .amount(100L)
@@ -34,7 +54,7 @@ class OperationRepositoryTest  extends BankAccountKataInfraApplicationTests {
     }
 
     @Test
-    void should_list_all_the_operation_from_database() {
+    public void should_list_all_the_operation_from_database() {
         List<OperationDto> operationDtoList = new ArrayList<>();
 
         //create bank account
@@ -60,5 +80,13 @@ class OperationRepositoryTest  extends BankAccountKataInfraApplicationTests {
                 .verifyComplete();
 
 
+    }
+
+    protected BankAccountDto saveBankAccount() {
+        BankAccountDto bankAccountDto = BankAccountDto.builder().id(ID).balance(balance).firstName(firstName).lastName(lastName)
+                .operations(new ArrayList<>())
+                .build();
+        //save in database
+        return bankAccountRepository.saveAccount(bankAccountDto).block();
     }
 }

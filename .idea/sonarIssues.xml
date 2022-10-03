@@ -78,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-business/.gitignore">
           <value>
             <set />
@@ -283,7 +288,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/BankAccountControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/BankAccountKataInfraApplicationTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/BankAccountKataInfraApplicationTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/BankAccountRepositoryTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/OperationRepositoryTest.java">
           <value>
             <set />
           </value>

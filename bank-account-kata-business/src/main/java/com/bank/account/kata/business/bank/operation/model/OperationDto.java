@@ -15,6 +15,7 @@ import java.time.Instant;
 @AllArgsConstructor
 public class OperationDto {
 
+    @JsonIgnore
     private Long id;
 
     private Instant date;
