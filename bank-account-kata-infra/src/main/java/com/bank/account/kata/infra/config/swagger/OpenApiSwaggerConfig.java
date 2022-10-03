@@ -17,7 +17,7 @@ public class OpenApiSwaggerConfig {
 
     /**
      * Open api
-     * configration swagger
+     * configuration swagger
      */
     @Bean
     public Docket api() {
