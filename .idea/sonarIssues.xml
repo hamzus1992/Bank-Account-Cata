@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/fragment.java">
           <value>
             <set />
@@ -283,7 +288,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/controller/AbstractRestOperationTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/controller/BankAccountControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/service/BankAccountRepositoryTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/service/BankAccountServiceTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/service/OperationRepositoryTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/resources/application-test.yml">
           <value>
             <set />
           </value>

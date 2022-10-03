@@ -6,7 +6,6 @@ import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
 import com.bank.account.kata.infra.domain.Operation;
 import com.bank.account.kata.infra.mapper.GenericObjectMapper;
 import com.bank.account.kata.infra.mapper.impl.GenericObjectMapperImpl;
-import com.bank.account.kata.infra.repo.BankAccountRepo;
 import com.bank.account.kata.infra.repo.OperationRepo;
 import com.github.dozermapper.core.Mapper;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +20,6 @@ public class OperationRepositoryAdapter implements OperationRepository {
 
     private final OperationRepo operationRepository;
     private final BankAccountRepository bankAccountRepository;
-    private final BankAccountRepo bankAccountRepo;
 
     private final GenericObjectMapper<Operation, OperationDto> inDataMapper;
     private final GenericObjectMapper<OperationDto, Operation> outDataMapper;
@@ -29,20 +27,11 @@ public class OperationRepositoryAdapter implements OperationRepository {
     @Autowired
     public OperationRepositoryAdapter(OperationRepo operationRepository,
                                       BankAccountRepository bankAccountRepository,
-                                      BankAccountRepo bankAccountRepo,
                                       Mapper operationMapper) {
         this.operationRepository = operationRepository;
         this.bankAccountRepository = bankAccountRepository;
-        this.bankAccountRepo = bankAccountRepo;
         this.inDataMapper = new GenericObjectMapperImpl<>(operationMapper, OperationDto.class);
         this.outDataMapper = new GenericObjectMapperImpl<>(operationMapper, Operation.class);
-    }
-
-
-    @Override
-    public Mono<OperationDto> findOperationById(Long id) {
-        return Mono.just(operationRepository.findOperationById(id))
-                .map(inDataMapper::convert);
     }
 
     @Override
