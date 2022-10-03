@@ -88,12 +88,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/api/BankAccountService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/api/OperationService.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/business/BankAccountServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/business/OperationServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/business/ServiceFactory.java">
           <value>
             <set />
           </value>
@@ -108,7 +123,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/model/BankAccountDto.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/model/OperationDto.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-business/src/main/java/com/bank/account/kata/business/bank/account/spi/BankAccountRepository.java">
           <value>
             <set />
           </value>
@@ -178,6 +203,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/java/com/bank/account/kata/infra/config/swagger/SpringFoxConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/java/com/bank/account/kata/infra/controller/BankAccountController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/java/com/bank/account/kata/infra/domain/BankAccount.java">
           <value>
             <set />
@@ -218,6 +253,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/java/com/bank/account/kata/infra/service/BankAccountServiceAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/java/com/bank/account/kata/infra/service/OperationRepositoryAdapter.java">
           <value>
             <set />
@@ -229,6 +269,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/resources/application.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/main/resources/import.sql">
           <value>
             <set />
           </value>

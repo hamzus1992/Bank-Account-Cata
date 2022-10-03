@@ -2,10 +2,10 @@ package com.bank.account.kata.business.bank.operation.business;
 
 import com.bank.account.kata.business.bank.operation.api.OperationService;
 import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
-import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import com.bank.account.kata.business.bank.operation.model.OperationTypeDto;
-import com.bank.account.kata.business.bank.operation.spi.BankAccountRepository;
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

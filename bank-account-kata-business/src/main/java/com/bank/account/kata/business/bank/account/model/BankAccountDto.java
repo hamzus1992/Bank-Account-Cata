@@ -1,11 +1,13 @@
-package com.bank.account.kata.business.bank.operation.model;
+package com.bank.account.kata.business.bank.account.model;
 
+import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,6 +20,6 @@ public class BankAccountDto {
 
     private long balance;
 
-    private List<OperationDto> latestOperations;
+    private List<OperationDto> latestOperations = new ArrayList<>();
 
 }

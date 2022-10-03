@@ -3,8 +3,8 @@ package com.bank.account.kata.infra.service;
 import com.bank.account.kata.business.bank.operation.api.OperationService;
 import com.bank.account.kata.business.bank.operation.business.ServiceFactory;
 import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
-import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
-import com.bank.account.kata.business.bank.operation.spi.BankAccountRepository;
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +26,12 @@ public class OperationServiceAdapter implements OperationService {
 
 
     @Override
-    public Mono<BankAccountDto> doWithdrawal(long accountId, long amount) throws AccountNotFoundException {
+    public Mono<BankAccountDto> doWithdrawal(long accountId, long amount) {
         return operationService.doWithdrawal(accountId, amount);
     }
 
     @Override
-    public Mono<BankAccountDto> doDeposit(long accountId, long amount) throws AccountNotFoundException {
+    public Mono<BankAccountDto> doDeposit(long accountId, long amount) {
         return operationService.doDeposit(accountId, amount);
     }
 }

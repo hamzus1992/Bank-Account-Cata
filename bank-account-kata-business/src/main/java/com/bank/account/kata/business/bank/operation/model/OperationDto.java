@@ -1,5 +1,6 @@
 package com.bank.account.kata.business.bank.operation.model;
 
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

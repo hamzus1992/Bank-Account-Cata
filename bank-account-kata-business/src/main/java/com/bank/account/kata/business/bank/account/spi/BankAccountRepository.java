@@ -1,7 +1,6 @@
-package com.bank.account.kata.business.bank.operation.spi;
+package com.bank.account.kata.business.bank.account.spi;
 
-import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
-import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
 import reactor.core.publisher.Mono;
 
 public interface BankAccountRepository {

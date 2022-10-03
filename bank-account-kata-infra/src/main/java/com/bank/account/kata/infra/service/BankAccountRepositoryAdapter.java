@@ -1,7 +1,7 @@
 package com.bank.account.kata.infra.service;
 
-import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
-import com.bank.account.kata.business.bank.operation.spi.BankAccountRepository;
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.infra.domain.BankAccount;
 import com.bank.account.kata.infra.mapper.GenericObjectMapper;
 import com.bank.account.kata.infra.mapper.impl.GenericObjectMapperImpl;
@@ -9,7 +9,6 @@ import com.bank.account.kata.infra.repo.BankAccountRepo;
 import com.github.dozermapper.core.Mapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 

@@ -18,7 +18,7 @@ public class BankAccount implements Serializable {
 
     public long balance;
 
-    @OneToMany(mappedBy = "account" , cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "account" , cascade = CascadeType.ALL, fetch = FetchType.EAGER )
     public List<Operation> operations = new ArrayList<>();
 
     public long getBalance() {

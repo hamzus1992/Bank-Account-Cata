@@ -1,6 +1,6 @@
 package com.bank.account.kata.infra.config;
 
-import com.bank.account.kata.business.bank.operation.model.BankAccountDto;
+import com.bank.account.kata.business.bank.account.model.BankAccountDto;
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import com.bank.account.kata.infra.domain.BankAccount;
 import com.bank.account.kata.infra.domain.Operation;

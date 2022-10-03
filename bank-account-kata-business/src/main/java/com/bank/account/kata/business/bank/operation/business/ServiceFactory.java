@@ -1,7 +1,7 @@
 package com.bank.account.kata.business.bank.operation.business;
 
 import com.bank.account.kata.business.bank.operation.api.OperationService;
-import com.bank.account.kata.business.bank.operation.spi.BankAccountRepository;
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
 import lombok.Getter;
 

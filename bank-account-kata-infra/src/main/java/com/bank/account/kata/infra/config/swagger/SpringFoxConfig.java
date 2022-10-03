@@ -1,26 +1,23 @@
 package com.bank.account.kata.infra.config.swagger;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * The type Open api swagger config.
  */
 @Configuration
-@Slf4j
-public class OpenApiSwaggerConfig {
+@EnableSwagger2
+public class SpringFoxConfig {
 
-    /**
-     * Open api
-     * configuration swagger
-     */
+
     @Bean
-    public Docket api() {
+    public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
