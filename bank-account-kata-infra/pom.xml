@@ -38,14 +38,24 @@
         <!-- Swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-            <scope>runtime</scope>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- DOZER -->
+        <dependency>
+            <groupId>com.github.dozermapper</groupId>
+            <artifactId>dozer-core</artifactId>
+            <version>6.5.0</version>
         </dependency>
         <!-- SpringBoot Test-->
         <dependency>

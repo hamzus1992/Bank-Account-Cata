@@ -1,0 +1,12 @@
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\api\OperationService.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\model\OperationDto.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\account\model\BankAccountDto.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\business\OperationServiceImpl.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\account\spi\BankAccountRepository.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\account\api\BankAccountService.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\model\OperationTypeDto.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\exception\AccountNotFoundException.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\account\business\BankAccountServiceImpl.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\business\ServiceFactory.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\account\business\ServiceFactory.java
+C:\Users\rakro001\Desktop\Nouveau dossier\bank-account-cata\bank-account-kata-business\src\main\java\com\bank\account\kata\business\bank\operation\spi\OperationRepository.java

@@ -4,12 +4,15 @@ server:
     context-path: "/"
 
 
+
 logging:
   level:
     org.springframework.web: WARN
     com.hiring.test: INFO
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: Back-End
   datasource:
