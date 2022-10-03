@@ -2,6 +2,7 @@ package com.bank.account.kata.infra.service;
 
 import com.bank.account.kata.business.bank.account.model.BankAccountDto;
 import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
+import com.bank.account.kata.business.bank.operation.exception.AccountNotFoundException;
 import com.bank.account.kata.infra.domain.BankAccount;
 import com.bank.account.kata.infra.mapper.GenericObjectMapper;
 import com.bank.account.kata.infra.mapper.impl.GenericObjectMapperImpl;
@@ -32,8 +33,14 @@ public class BankAccountRepositoryAdapter implements BankAccountRepository {
 
     @Override
     public Mono<BankAccountDto> findById(Long id) {
-        return Mono.just(bankAccountRepo.findBankAccountById(id))
-                .map(inDataMapper::convert);
+        BankAccount bankAccount = bankAccountRepo.findBankAccountById(id);
+        if(bankAccount != null) {
+            return Mono.just(bankAccount)
+                    .switchIfEmpty(Mono.defer(() -> Mono.error(new AccountNotFoundException(String.valueOf(id)))))
+                    .map(inDataMapper::convert);
+        } else {
+            return Mono.defer(() -> Mono.error(new AccountNotFoundException(String.valueOf(id))));
+        }
     }
 
     @Override

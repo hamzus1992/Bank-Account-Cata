@@ -1,6 +1,7 @@
 package com.bank.account.kata.infra.domain;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @Table(name = "account")
 public class BankAccount implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -16,10 +18,14 @@ public class BankAccount implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    public long balance;
+    private String firstName;
+
+    private String lastName;
+
+    private long balance;
 
     @OneToMany(mappedBy = "account" , cascade = CascadeType.ALL, fetch = FetchType.EAGER )
-    public List<Operation> operations = new ArrayList<>();
+    private List<Operation> operations = new ArrayList<>();
 
     public long getBalance() {
         return balance;
@@ -35,6 +41,22 @@ public class BankAccount implements Serializable {
 
     public void setOperations(List<Operation> operations) {
         this.operations = operations;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Long getId() {

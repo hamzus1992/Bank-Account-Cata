@@ -26,7 +26,7 @@ public class BankAccountController {
         this.bankAccountServiceAdapterAdapter = bankAccountServiceAdapterAdapter;
     }
 
-    @ApiOperation(value = "printAccountState", notes = "return given account state and recent operations")
+    @ApiOperation(value = "printAccountState", notes = "return given account state")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = BankAccountDto.class),
             @ApiResponse(code = 404, message = "Bad request"),
@@ -47,7 +47,7 @@ public class BankAccountController {
     }
 
 
-    @ApiOperation(value = "deposit", notes = "perfom a deposit on the given account")
+    @ApiOperation(value = "deposit", notes = "perform a deposit on the given account")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = BankAccountDto.class),
             @ApiResponse(code = 404, message = "Bad request"),
@@ -59,7 +59,7 @@ public class BankAccountController {
     }
 
 
-    @ApiOperation(value = "withdrawall", notes = "perfom a withdrawal on the given account")
+    @ApiOperation(value = "withdrawal", notes = "perform a withdrawal on the given account")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = BankAccountDto.class),
             @ApiResponse(code = 404, message = "Bad request"),

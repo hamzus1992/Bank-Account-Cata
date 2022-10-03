@@ -52,7 +52,7 @@ public class OperationServiceImpl implements OperationService {
 
 
     private BankAccountDto createAccount(OperationDto operationDto, long amount, OperationTypeDto operationTypeDto) {
-        operationDto.getAccount().getLatestOperations().add(operationDto);
+        operationDto.getAccount().getOperations().add(operationDto);
         operationDto.getAccount().setBalance(operationDto.getAccount().getBalance() + ((operationTypeDto.equals(OperationTypeDto.DEPOSIT) ? 1 : -1) * amount));
         return operationDto.getAccount();
     }

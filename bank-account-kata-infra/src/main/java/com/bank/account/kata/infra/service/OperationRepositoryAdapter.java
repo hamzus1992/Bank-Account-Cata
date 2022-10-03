@@ -1,5 +1,6 @@
 package com.bank.account.kata.infra.service;
 
+import com.bank.account.kata.business.bank.account.spi.BankAccountRepository;
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
 import com.bank.account.kata.business.bank.operation.spi.OperationRepository;
 import com.bank.account.kata.infra.domain.Operation;
@@ -19,6 +20,7 @@ import reactor.core.publisher.Mono;
 public class OperationRepositoryAdapter implements OperationRepository {
 
     private final OperationRepo operationRepository;
+    private final BankAccountRepository bankAccountRepository;
     private final BankAccountRepo bankAccountRepo;
 
     private final GenericObjectMapper<Operation, OperationDto> inDataMapper;
@@ -26,9 +28,11 @@ public class OperationRepositoryAdapter implements OperationRepository {
 
     @Autowired
     public OperationRepositoryAdapter(OperationRepo operationRepository,
+                                      BankAccountRepository bankAccountRepository,
                                       BankAccountRepo bankAccountRepo,
                                       Mapper operationMapper) {
         this.operationRepository = operationRepository;
+        this.bankAccountRepository = bankAccountRepository;
         this.bankAccountRepo = bankAccountRepo;
         this.inDataMapper = new GenericObjectMapperImpl<>(operationMapper, OperationDto.class);
         this.outDataMapper = new GenericObjectMapperImpl<>(operationMapper, Operation.class);
@@ -49,10 +53,9 @@ public class OperationRepositoryAdapter implements OperationRepository {
 
     @Override
     public Flux<OperationDto> findAllOperation(Long idAccount) {
-        return Mono.just(bankAccountRepo.findBankAccountById(idAccount))
+        return bankAccountRepository.findById(idAccount)
                 .flatMapMany(bankAccount -> Flux.fromStream(bankAccount
                         .getOperations()
-                        .stream()
-                        .map(inDataMapper::convert)));
+                        .stream()));
     }
 }

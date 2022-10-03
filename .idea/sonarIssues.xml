@@ -278,6 +278,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/BankAccountKataInfraApplicationTests.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/bank-account-kata-infra/src/test/java/com/bank/account/kata/infra/controller/BankAccountControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />

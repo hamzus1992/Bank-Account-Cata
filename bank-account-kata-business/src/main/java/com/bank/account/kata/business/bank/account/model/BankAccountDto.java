@@ -1,6 +1,7 @@
 package com.bank.account.kata.business.bank.account.model;
 
 import com.bank.account.kata.business.bank.operation.model.OperationDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,8 +19,13 @@ public class BankAccountDto {
 
     private Long id;
 
+    private String firstName;
+
+    private String lastName;
+
     private long balance;
 
-    private List<OperationDto> latestOperations = new ArrayList<>();
+    @JsonIgnore
+    private List<OperationDto> operations = new ArrayList<>();
 
 }
