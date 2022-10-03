@@ -9,6 +9,7 @@ import com.bank.account.kata.infra.repo.BankAccountRepo;
 import com.github.dozermapper.core.Mapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -16,15 +17,15 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class BankAccountRepositoryAdapter implements BankAccountRepository {
 
-    private final BankAccountRepo bankAccountRepository;
+    private final BankAccountRepo bankAccountRepo;
 
     private final GenericObjectMapper<BankAccount, BankAccountDto> inDataMapper;
     private final GenericObjectMapper<BankAccountDto, BankAccount> outDataMapper;
 
     @Autowired
-    public BankAccountRepositoryAdapter(BankAccountRepo bankAccountRepository,
+    public BankAccountRepositoryAdapter(BankAccountRepo bankAccountRepo,
                                         Mapper bankAccountMapper) {
-        this.bankAccountRepository = bankAccountRepository;
+        this.bankAccountRepo = bankAccountRepo;
         this.inDataMapper = new GenericObjectMapperImpl<>(bankAccountMapper, BankAccountDto.class);
         this.outDataMapper = new GenericObjectMapperImpl<>(bankAccountMapper, BankAccount.class);
     }
@@ -32,13 +33,13 @@ public class BankAccountRepositoryAdapter implements BankAccountRepository {
 
     @Override
     public Mono<BankAccountDto> findById(Long id) {
-        return bankAccountRepository.findById(id)
+        return Mono.just(bankAccountRepo.findBankAccountById(id))
                 .map(inDataMapper::convert);
     }
 
     @Override
     public Mono<BankAccountDto> saveAccount(BankAccountDto accountDto) {
-        return bankAccountRepository.save(outDataMapper.convert(accountDto))
+        return Mono.just(bankAccountRepo.save(outDataMapper.convert(accountDto)))
                 .map(inDataMapper::convert);
     }
 }

@@ -37,19 +37,19 @@ public class OperationRepositoryAdapter implements OperationRepository {
 
     @Override
     public Mono<OperationDto> findOperationById(Long id) {
-        return operationRepository.findById(id)
+        return Mono.just(operationRepository.findOperationById(id))
                 .map(inDataMapper::convert);
     }
 
     @Override
     public Mono<OperationDto> saveOperation(OperationDto operationDto) {
-        return operationRepository.save(outDataMapper.convert(operationDto))
+        return Mono.just(operationRepository.save(outDataMapper.convert(operationDto)))
                 .map(inDataMapper::convert);
     }
 
     @Override
     public Flux<OperationDto> findAllOperation(Long idAccount) {
-        return bankAccountRepo.findById(idAccount)
+        return Mono.just(bankAccountRepo.findBankAccountById(idAccount))
                 .flatMapMany(bankAccount -> Flux.fromStream(bankAccount
                         .getOperations()
                         .stream()
